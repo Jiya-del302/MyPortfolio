@@ -859,7 +859,8 @@
         .skill-card,
         .timeline-item,
         .journey-content,
-        .gallery-item {
+        .gallery-item,
+        .project-card {
             border-radius: 8px;
             border: 1px solid rgba(168, 138, 230, 0.16);
             background: rgba(255, 255, 255, 0.82);
@@ -884,7 +885,8 @@
         .skill-card:hover,
         .timeline-item:hover,
         .journey-content:hover,
-        .gallery-item:hover {
+        .gallery-item:hover,
+        .project-card:hover {
             transform: translateY(-8px);
             box-shadow: var(--shadow);
         }
@@ -921,6 +923,66 @@
 
         .progress-fill {
             background: linear-gradient(90deg, var(--lavender), var(--blue), var(--mint-strong));
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .project-card::before {
+            content: "";
+            position: absolute;
+            inset: 0 0 auto 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--blue), var(--mint-strong), var(--lavender));
+        }
+
+        .project-kicker {
+            color: var(--lavender);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            margin-bottom: 0.85rem;
+        }
+
+        .project-title {
+            color: var(--ink);
+            font-size: 1.45rem;
+            line-height: 1.25;
+            margin-bottom: 1rem;
+        }
+
+        .project-desc {
+            color: var(--muted);
+            margin-bottom: 1.4rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            list-style: none;
+        }
+
+        .tech-stack li {
+            color: var(--ink);
+            background: rgba(191, 238, 221, 0.7);
+            border: 1px solid rgba(101, 200, 173, 0.35);
+            border-radius: 999px;
+            padding: 0.45rem 0.8rem;
+            font-size: 0.82rem;
+            font-weight: 600;
         }
 
         #studies,
@@ -1098,7 +1160,7 @@
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#studies">Studies</a></li>
                 <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#journey">Project</a></li>
+                <li><a href="#projects">Project</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="mobile-menu">
@@ -1189,15 +1251,68 @@
                 <div class="timeline-item fade-in">
                     <div class="timeline-date">2023 - 2026</div>
                     <h3 class="timeline-title">B.Sc(Comp. Sci) </h3>
-                    <p class="timeline-desc">Graduated with distinction from SPPU University(C.T Bora collage), specializing in cloud computing and software engineering.</p>
+                    <p class="timeline-desc">Pursuing B.Sc Computer Science from SPPU University (C.T. Bora College), specializing in cloud computing and software engineering. Current SGPA: 9.33.</p>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-date">2022 - 2023</div>
+                    <h3 class="timeline-title">Higher Secondary Education</h3>
+                    <p class="timeline-desc">Completed Higher Secondary Education in General Science with 69%.</p>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-date">2019 - 2020</div>
+                    <h3 class="timeline-title">Secondary Education</h3>
+                    <p class="timeline-desc">Completed Secondary Education with 92.60%.</p>
                 </div>
                 <div class="timeline-item fade-in">
                     <div class="timeline-date">2026</div>
                     <h3 class="timeline-title">AWS Certified Cloud Practitioner</h3>
                     <p class="timeline-desc">Achieved AWS Cloud Practitioner certification, demonstrating foundational cloud knowledge.</p>
                 </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-date">2025</div>
+                    <h3 class="timeline-title">Avishkar Zonal Level Certificate</h3>
+                    <p class="timeline-desc">Received zonal level recognition for Protect Your Path, an IoT-based safety project.</p>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-date">2025</div>
+                    <h3 class="timeline-title">AI Tools Workshop Certificate</h3>
+                    <p class="timeline-desc">Completed an AI Tools workshop focused on practical use of modern AI tools.</p>
+                </div>
 
 
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">Projects</h2>
+            <div class="projects-grid">
+                <article class="project-card fade-in">
+                    <div class="project-kicker">Final Year Project</div>
+                    <h3 class="project-title">Campus Wire - Academic Communication Platform</h3>
+                    <p class="project-desc">A web-based academic productivity and resource sharing platform for students and faculty integrating announcements, resource sharing for faculty & task management and Pomodoro-based productivity for students.</p>
+                    <ul class="tech-stack" aria-label="Campus Wire tech stack">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>PHP</li>
+                        <li>MySQL</li>
+                    </ul>
+                </article>
+                <article class="project-card fade-in">
+                    <div class="project-kicker">IoT Project</div>
+                    <h3 class="project-title">Protect Your Path</h3>
+                    <p class="project-desc">An IoT-based Vehicle safety and alert system, pothole and speed bump detection system for night and low-visibility areas, with real-time alerts and OLED display output.</p>
+                    <ul class="tech-stack" aria-label="Protect Your Path tech stack">
+                        <li>IoT</li>
+                        <li>Sensors</li>
+                        <li>OLED Display</li>
+                        <li>ESP32</li>
+                        <li>Real-time Alerts</li>
+                    </ul>
+                </article>
             </div>
         </div>
     </section>
@@ -1208,32 +1323,32 @@
             <h2 class="section-title fade-in">Gallery</h2>
             <div class="gallery-grid">
                 <div class="gallery-item fade-in">
-                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=300&fit=crop&auto=format&q=80" alt="Cloud Infrastructure">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&h=420&fit=crop&auto=format&q=85" alt="Cloud application infrastructure">
                     <div class="gallery-overlay">
                         <i class="fas fa-search-plus"></i>
                     </div>
                 </div>
                 <div class="gallery-item fade-in">
-                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&auto=format&q=80" alt="DevOps Tools">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=420&fit=crop&auto=format&q=85" alt="Full stack web development code">
                     <div class="gallery-overlay">
                         <i class="fas fa-search-plus"></i>
                     </div>
                 </div>
 
                 <div class="gallery-item fade-in">
-                    <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=400&h=300&fit=crop&auto=format&q=80" alt="Code Review">
+                    <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=600&h=420&fit=crop&auto=format&q=85" alt="Backend development workspace">
                     <div class="gallery-overlay">
                         <i class="fas fa-search-plus"></i>
                     </div>
                 </div>
                 <div class="gallery-item fade-in">
-                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&h=300&fit=crop&auto=format&q=80" alt="Team Meeting">
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=420&fit=crop&auto=format&q=85" alt="Server and DevOps infrastructure">
                     <div class="gallery-overlay">
                         <i class="fas fa-search-plus"></i>
                     </div>
                 </div>
                 <div class="gallery-item fade-in">
-                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=300&fit=crop&auto=format&q=80" alt="Certification">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=420&fit=crop&auto=format&q=85" alt="Application dashboard and analytics">
                     <div class="gallery-overlay">
                         <i class="fas fa-search-plus"></i>
                     </div>
@@ -1294,12 +1409,13 @@
                 <a href="http://www.linkedin.com/in/jiya-pardeshi-8b2b6040b" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
                 <a href="https://github.com/Jiya-del302" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
                 <a href="mailto:jiyapardeshi2005@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-                <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/its_jiyarajput18?igsh=MTN2ZmxuaG45bWt5Ng==" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
             </div>
             <div class="footer-nav">
                 <a href="#home">Home</a>
                 <a href="#skills">Skills</a>
                 <a href="#studies">Studies</a>
+                <a href="#projects">Projects</a>
                 <a href="#gallery">Gallery</a>
                 <a href="#journey">Job Journey</a>
                 <a href="#contact">Contact</a>
